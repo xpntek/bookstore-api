@@ -9,8 +9,8 @@ public static class DependencyInjection
     public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<DataContext>(
-            options => options.UseMySql(configuration.GetConnectionString("mysql"),
-                ServerVersion.AutoDetect(configuration.GetConnectionString("mysql")))
+            options => options.UseNpgsql(configuration.GetConnectionString("Postgres")
+                )
             );
         
         return services;

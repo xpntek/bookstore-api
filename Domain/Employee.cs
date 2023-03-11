@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain;
 
-public class Employee
+public class Employee:BaseEntity
 {
     public int EmployeeCode { get; set; }
     public string Function { get; set; }

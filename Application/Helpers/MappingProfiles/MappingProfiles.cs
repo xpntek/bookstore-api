@@ -9,6 +9,7 @@ public class MappingProfiles : Profile
     public MappingProfiles()
     {
         CreateMap<ApplicationUser, UserDto>();
+        CreateMap<Author,AuthorDto>();
     }
     
 }

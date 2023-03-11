@@ -26,5 +26,8 @@ public class DataContext: IdentityDbContext
     public DbSet<Reserve> Reserves { get; set; }
     public DbSet<RolePermission> RolePermissions { get; set; }
     public DbSet<Supplier> Suppliers { get; set; }
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<BookAuthor> BookAuthors { get; set; }
+    
 
 }

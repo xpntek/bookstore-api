@@ -7,7 +7,7 @@ public class Purchase : BaseEntity
     public DateTimeOffset PurchaseDate { get; set; }
     public int BookId { get; set; }
     [ForeignKey("BooKId")] public Book? Book { get; set; }
-    public int UserId { get; set; }
+    public string UserId { get; set; }
     [ForeignKey("UserId")] public ApplicationUser? User { get; set; }
     public int BookAmount { get; set; }
     public float TotalValue { get; set; }
