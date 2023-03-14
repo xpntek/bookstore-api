@@ -27,11 +27,30 @@ public class DbInitializer : IDbInitializer
         try
         {
             if (_context.Database.GetPendingMigrations().Count() > 0) _context.Database.Migrate();
+            
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
             throw;
+        }
+
+        if (!_context.Categories.Any())
+        {
+            _context.Categories.Add(new Category { Description = "Romance" });
+            _context.Categories.Add(new Category { Description = "Drama" });
+            _context.Categories.Add(new Category { Description = "Novela" });
+            _context.Categories.Add(new Category { Description = "Conto" });
+            _context.Categories.Add(new Category { Description = "Crônica" });
+            _context.Categories.Add(new Category { Description = "Ensaio" });
+            _context.Categories.Add(new Category { Description = "Poesia" });
+            _context.Categories.Add(new Category { Description = "Carta" });
+            _context.Categories.Add(new Category { Description = "Aventura" });
+            _context.Categories.Add(new Category { Description = "Biografia" });
+            _context.Categories.Add(new Category { Description = "Terror" });
+            _context.Categories.Add(new Category { Description = "Acadêmico" });
+            _context.Categories.Add(new Category { Description = "Comedia" });
+            _context.SaveChanges();
         }
 
         //Create roles
@@ -46,13 +65,13 @@ public class DbInitializer : IDbInitializer
                 UserName = "sysadmin",
                 Fullname = "System Admin",
                 PhoneNumber = "879147914"
-            }, "Pa$$w0rd1").GetAwaiter().GetResult();
+            }, "Pa$$w0rd").GetAwaiter().GetResult();
 
             var user = _context.ApplicationUsers
                 .FirstOrDefaultAsync(x => x.Email == "20180376@isctem.ac.mz").GetAwaiter().GetResult();
 
             _userManager.AddToRoleAsync(user, SD.ADMIN_ROLE).GetAwaiter().GetResult();
         }
-
+        
     }
 }

@@ -6,7 +6,7 @@ public class Request:BaseEntity
 {
     public DateTimeOffset RequestDate { get; set; }
     public DateTimeOffset ExpectedDeliveryDate { get; set; }
-    public string EmployeeId { get; set; }
+    public int EmployeeId { get; set; }
     [ForeignKey("EmployeeId")] 
     public Employee Employee { get; set; }
     public string Status { get; set; }

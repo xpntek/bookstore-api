@@ -1,5 +1,6 @@
 using Application.Interfaces;
 using Infrastructure.Services;
+using Infrastruture.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure;
@@ -10,6 +11,7 @@ public static class DependencyInjection
     {
         services.AddScoped<ITokenService, TokenService>();
         services.AddScoped<IUserAccessor, UserAccessor>();
+        services.AddScoped<IListOfAuthorsService, ListOfAuthorsService>();
         return services;
     }
 }
