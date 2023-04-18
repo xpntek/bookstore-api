@@ -21,6 +21,11 @@
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.2" />
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="NLog.Web.AspNetCore" Version="5.2.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.13" />
+        <PackageReference Include="JsonModelBinder" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+
     </ItemGroup>
 
     <ItemGroup>

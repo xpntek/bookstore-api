@@ -33,6 +33,24 @@ public class DbInitializer : IDbInitializer
             Console.WriteLine(e);
             throw;
         }
+        
+    if (!_context.Categories.Any())
+        {
+            _context.Categories.Add(new Category { Description = "Romance" });
+            _context.Categories.Add(new Category { Description = "Drama" });
+            _context.Categories.Add(new Category { Description = "Novela" });
+            _context.Categories.Add(new Category { Description = "Conto" });
+            _context.Categories.Add(new Category { Description = "Crônica" });
+            _context.Categories.Add(new Category { Description = "Ensaio" });
+            _context.Categories.Add(new Category { Description = "Poesia" });
+            _context.Categories.Add(new Category { Description = "Carta" });
+            _context.Categories.Add(new Category { Description = "Aventura" });
+            _context.Categories.Add(new Category { Description = "Biografia" });
+            _context.Categories.Add(new Category { Description = "Terror" });
+            _context.Categories.Add(new Category { Description = "Acadêmico" });
+            _context.Categories.Add(new Category { Description = "Comedia" });
+            _context.SaveChanges();
+        }
 
         //Create roles
         if (!_roleManager.RoleExistsAsync(SD.ADMIN_ROLE).GetAwaiter().GetResult())
